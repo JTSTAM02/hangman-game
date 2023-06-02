@@ -1,1 +1,16 @@
+body {
+    background-image: url("https://m.media-amazon.com/images/I/61JRKnFiecL._AC_UF894,1000_QL80_.jpg");
+    background-position:center;
+    text-align: center;
+    background-color: steelblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav {
+    display: flexbox;
+    position: static;
+    color: black;
+}
+
+
 
