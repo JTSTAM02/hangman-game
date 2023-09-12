@@ -3,7 +3,7 @@ body {
     color: white;
     text-align: center;
     height: 100%;
-    font-size: 18px;
+    font-size: 25px;
   }
   
   .wrappper {
@@ -79,5 +79,5 @@ body {
     transition: 0.5s;
     background: white;
     border: solid 1px white;
-    color: #c1d72e;
+    color: rgb(238, 83, 109);
   }

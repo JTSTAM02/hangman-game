@@ -1,10 +1,3 @@
-const newGame = document.getElementById("button");
-newGame.addEventListener("click", DisplayGame);
-
-function DisplayGame(){
-    alert("Practice!")
-}
-
 
 const container = document.getElementById("alphabetButtons");
 var answerDisplay = document.getElementById("hold");
@@ -41,62 +34,65 @@ function generateButton() {
 function handleClick(event) {
   const isButton = event.target.nodeName === "BUTTON";
   if (isButton) {
-    //console.dir(event.target.id);
-    //console.log(isButton);
     const buttonId = document.getElementById(event.target.id);
     buttonId.classList.add("selected");
   }
   return;
 }
 
-//word array
 const question = [
-  "The Chosen Category Is Premier League Football Teams",
+  "The Chosen Category Is NBA Teams",
   "The Chosen Category Is Films",
   "The Chosen Category Is Cities"
 ];
 
 const categories = [
   [
-    "everton",
-    "liverpool",
-    "swansea",
-    "chelsea",
-    "hull",
-    "manchester-city",
-    "newcastle-united"
+    "celtics",
+    "lakers",
+    "grizzlies",
+    "mavericks",
+    "warriors",
+    "cavaliers",
+    "magic"
   ],
-  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-  ["manchester", "milan", "madrid", "amsterdam", "prague"]
+  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest gump", 'inception'],
+  ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san diego']
 ];
 
 const hints = [
   [
-    "Based in Mersyside",
-    "Based in Mersyside",
-    "First Welsh team to reach the Premier Leauge",
-    "Owned by A russian Billionaire",
-    "Once managed by Phil Brown",
-    "2013 FA Cup runners up",
-    "Gazza's first club"
+    "Based in Boston",
+    "Based in Los Angeles",
+    "Underrated squad in the Western Conference",
+    "Luke Magic",
+    "Splash Brothers",
+    "Have a love/hate relationship with LeBron James",
+    "Star player recently won Rookie of the Year"
   ],
   [
     "Science-Fiction horror film",
     "1971 American action film",
     "Historical drama",
-    "Anamated Fish",
-    "Giant great white shark"
+    "Animated Fish",
+    "Giant great white shark",
+    "Classic film involving comedy, drama, history, and running",
+    "Modern hit with Leonardo DiCaprio"
   ],
   [
     "Northern city in the UK",
     "Home of AC and Inter",
     "Spanish capital",
     "Netherlands capital",
-    "Czech Republic capital"
+    "Czech Republic capital",
+    "Hometown of Muhammad Ali",
+    "Horse Capital of the World",
+    "Capital of Kentucky",
+    "Small town named after French city",
+    "Beautiful weather year round"
   ]
 ];
 
-//set question,answer and hint
 
 function setAnswer() {
   const categoryOrder = Math.floor(Math.random() * categories.length);
@@ -107,8 +103,7 @@ function setAnswer() {
   const categoryNameJS = document.getElementById("categoryName");
   categoryNameJS.innerHTML = question[categoryOrder];
 
-  //console.log(chosenCategory);
-  //console.log(chosenWord);
+
   answer = chosenWord;
   hint = hints[categoryOrder][wordOrder];
   answerDisplay.innerHTML = generateAnswerDisplay(chosenWord);
@@ -116,7 +111,6 @@ function setAnswer() {
 
 function generateAnswerDisplay(word) {
   var wordArray = word.split("");
-  //console.log(wordArray);
   for (var i = 0; i < answer.length; i++) {
     if (wordArray[i] !== "-") {
       wordDisplay.push("_");
@@ -132,7 +126,6 @@ function showHint() {
 }
 
 buttonHint.addEventListener("click", showHint);
-//setting initial condition
 function init() {
   answer = "";
   hint = "";
@@ -147,17 +140,18 @@ function init() {
   container.innerHTML = generateButton();
   container.addEventListener("click", handleClick);
   console.log(answer);
-  //console.log(hint);
 }
 
 window.onload = init();
 
-//reset (play again)
 buttonReset.addEventListener("click", init);
 
-//guess click
 function guess(event) {
   const guessWord = event.target.id;
+  const buttonId = document.getElementById(guessWord); // Get the button element
+  if (buttonId.disabled) {
+    return
+  };
   const answerArray = answer.split("");
   var counter = 0;
   if (answer === winningCheck) {
@@ -168,10 +162,8 @@ function guess(event) {
       for (var j = 0; j < answer.length; j++) {
         if (guessWord === answerArray[j]) {
           wordDisplay[j] = guessWord;
-          console.log(guessWord);
           answerDisplay.innerHTML = wordDisplay.join(" ");
           winningCheck = wordDisplay.join("");
-          //console.log(winningCheck)
           counter += 1;
         }
       }
@@ -189,12 +181,15 @@ function guess(event) {
       } else {
         livesDisplay.innerHTML = `GAME OVER!`;
       }
+      buttonId.disabled = true;
+
+      if (answer === winningCheck) {
+        livesDisplay.innerHTML = `YOU WIN!`;
+        return;
+      }
     } else {
       return;
     }
-    console.log(wordDisplay);
-    //console.log(counter);
-    //console.log(life);
     if (answer === winningCheck) {
       livesDisplay.innerHTML = `YOU WIN!`;
       return;
@@ -202,12 +197,12 @@ function guess(event) {
   }
 }
 
+
 container.addEventListener("click", guess);
 
 // Hangman
 function animate() {
   drawArray[life]();
-  //console.log(drawArray[life]);
 }
 
 function canvas() {
