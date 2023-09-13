@@ -41,9 +41,9 @@ function handleClick(event) {
 }
 
 const question = [
-  "The Chosen Category Is NBA Teams",
-  "The Chosen Category Is Films",
-  "The Chosen Category Is Cities"
+  "The Category Is NBA Teams",
+  "The Category Is Films",
+  "The Category Is Cities"
 ];
 
 const categories = [
@@ -56,8 +56,8 @@ const categories = [
     "cavaliers",
     "magic"
   ],
-  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest gump", 'inception'],
-  ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san diego']
+  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest-gump", 'inception'],
+  ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san-diego', 'sacremento', 'omaha', 'los-angeles']
 ];
 
 const hints = [
@@ -89,7 +89,10 @@ const hints = [
     "Horse Capital of the World",
     "Capital of Kentucky",
     "Small town named after French city",
-    "Beautiful weather year round"
+    "Beautiful weather year round",
+    "Known for the Gold Rush",
+    "Peyton Manning's favorite word",
+    "One of the largest cities in the entire United States"
   ]
 ];
 
