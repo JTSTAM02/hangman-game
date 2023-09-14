@@ -43,7 +43,8 @@ function handleClick(event) {
 const question = [
   "The Category Is NBA Teams",
   "The Category Is Films",
-  "The Category Is Cities"
+  "The Category Is Cities",
+  "The Category Is Historical Figures"
 ];
 
 const categories = [
@@ -57,7 +58,8 @@ const categories = [
     "magic"
   ],
   ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest-gump", 'inception'],
-  ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san-diego', 'sacremento', 'omaha', 'los-angeles']
+  ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san-diego', 'sacremento', 'omaha', 'los-angeles'],
+  ['abraham-lincoln', 'george-washington', 'harry-truman', 'joan-of-arc', 'jesus']
 ];
 
 const hints = [
@@ -93,7 +95,12 @@ const hints = [
     "Known for the Gold Rush",
     "Peyton Manning's favorite word",
     "One of the largest cities in the entire United States"
-  ]
+  ],
+  ["Great American Leaderr during the Civil War",
+"Great military leader and President",
+"Led the United States after World War Two",
+"Great military leader with major historical significance",
+"Founder of largest religion on Earth"]
 ];
 
 
