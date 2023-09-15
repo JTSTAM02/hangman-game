@@ -12,6 +12,12 @@ const buttonReset = document.getElementById("reset");
 const livesDisplay = document.getElementById("mylives");
 var myStickman = document.getElementById("stickman");
 var context = myStickman.getContext("2d");
+const categorySelect = document.getElementById("categorySelect");
+
+categorySelect.addEventListener("change", function () {
+  const selectedCategoryIndex = parseInt(categorySelect.value);
+  setAnswer(selectedCategoryIndex);
+});
 
 //generate alphabet button
 function generateButton() {
@@ -104,24 +110,24 @@ const hints = [
 ];
 
 
-function setAnswer() {
-  const categoryOrder = Math.floor(Math.random() * categories.length);
-  const chosenCategory = categories[categoryOrder];
+function setAnswer(selectedCategoryIndex) {
+  const chosenCategory = categories[selectedCategoryIndex];
   const wordOrder = Math.floor(Math.random() * chosenCategory.length);
   const chosenWord = chosenCategory[wordOrder];
 
   const categoryNameJS = document.getElementById("categoryName");
-  categoryNameJS.innerHTML = question[categoryOrder];
-
+  categoryNameJS.innerHTML = question[selectedCategoryIndex];
 
   answer = chosenWord;
-  hint = hints[categoryOrder][wordOrder];
-  answerDisplay.innerHTML = generateAnswerDisplay(chosenWord);
+  hint = hints[selectedCategoryIndex][wordOrder];
+  answerDisplay.innerHTML = generateAnswerDisplay(chosenWord); // Update the display
 }
 
+
 function generateAnswerDisplay(word) {
+  wordDisplay = []; // Clear the previous word display
   var wordArray = word.split("");
-  for (var i = 0; i < answer.length; i++) {
+  for (var i = 0; i < word.length; i++) { // Use word.length instead of answer.length
     if (wordArray[i] !== "-") {
       wordDisplay.push("_");
     } else {
@@ -130,6 +136,7 @@ function generateAnswerDisplay(word) {
   }
   return wordDisplay.join(" ");
 }
+
 
 function showHint() {
   containerHint.innerHTML = `Clue - ${hint}`;
@@ -146,11 +153,12 @@ function init() {
   canvas();
   containerHint.innerHTML = `Clue -`;
   livesDisplay.innerHTML = `You have ${life} lives!`;
-  setAnswer();
+  setAnswer(0);
   container.innerHTML = generateButton();
   container.addEventListener("click", handleClick);
-  console.log(answer);
+  categorySelect.value="0";
 }
+
 
 window.onload = init();
 
