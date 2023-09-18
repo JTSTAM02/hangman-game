@@ -61,9 +61,12 @@ const categories = [
     "mavericks",
     "warriors",
     "cavaliers",
-    "magic"
+    "magic",
+    "bucks",
+    "sixers",
+    "heat"
   ],
-  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest-gump", 'inception'],
+  ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws", "forrest-gump", 'inception', 'the-notebook'],
   ["manchester", "milan", "madrid", "amsterdam", "prague", "louisville", 'lexington', 'frankfort', 'versailles', 'san-diego', 'sacremento', 'omaha', 'los-angeles'],
   ['abraham-lincoln', 'george-washington', 'harry-truman', 'joan-of-arc', 'jesus']
 ];
@@ -76,7 +79,10 @@ const hints = [
     "Luke Magic",
     "Splash Brothers",
     "Have a love/hate relationship with LeBron James",
-    "Star player recently won Rookie of the Year"
+    "Star player recently won Rookie of the Year",
+    "Exceptional team with a superstar in the frontcourt",
+    "Trust the Process",
+    'Won several championships in the past few decades'
   ],
   [
     "Science-Fiction horror film",
@@ -85,7 +91,8 @@ const hints = [
     "Animated Fish",
     "Giant great white shark",
     "Classic film involving comedy, drama, history, and running",
-    "Modern hit with Leonardo DiCaprio"
+    "Modern hit with Leonardo DiCaprio",
+    'Classic Romance Film that tugs at the heartstrings'
   ],
   [
     "Northern city in the UK",
@@ -102,11 +109,11 @@ const hints = [
     "Peyton Manning's favorite word",
     "One of the largest cities in the entire United States"
   ],
-  ["Great American Leaderr during the Civil War",
+  ["Great American Leader during the Civil War",
 "Great military leader and President",
 "Led the United States after World War Two",
 "Great military leader with major historical significance",
-"Founder of largest religion on Earth"]
+"Founder of the largest religion on Earth"]
 ];
 
 
