@@ -7,7 +7,7 @@
   - Allow user input of alphabet letters from click
   - if letter is in word, display it
   - if not, mark the hang stick with a body part
-  - Continue until lose condiotions are met or win conditions are met
+  - Continue until lose conditions are met or win conditions are met
   - If lose, display "You did not win this round. Try again!"
   - if Win. display "You won! Click New Game to play agaon"!
   - After either win or Loss, dispaly original word
